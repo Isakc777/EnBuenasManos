@@ -7,8 +7,10 @@
     <color name="teal_700">#FF018786</color>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
-
+    <color name="turquesa">#73D3BC</color>
+    <color name="gris_claro">#ecf0f1</color>
     <!-- Login -->
+
     <color name="LoginBackground">#282b3a</color>
     <color name="LoginButton">#73D3BC</color>
     <color name="LoginText">#AAAAAA</color>
@@ -18,4 +20,6 @@
     shrine_blue_900
     <color name="shrine_blue_900">#2B1FBC</color>
     <color name="shrine_blue_100">#564EBD</color>
+
+
 </resources>

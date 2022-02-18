@@ -1,5 +1,6 @@
-package com.example.enbuenasmanos.presentacion
 
+package com.example.enbuenasmanos.presentacion
+//coment
 import android.content.Context
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
@@ -18,12 +19,10 @@ class LoginActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityLoginBinding.inflate(layoutInflater)
-        setContentView(binding.root)
-
+        //setContentView(binding.root)
         binding.btnForget.setOnClickListener() {
             Toast.makeText(this, "Pantalla en construcción", Toast.LENGTH_SHORT).show()
         }
-
         binding.btnLogin.setOnClickListener()
         {
             val access = UsuarioController().LoginUser(
@@ -48,3 +47,4 @@ class LoginActivity : AppCompatActivity() {
         imm.hideSoftInputFromWindow(view.windowToken, 0)
     }
 }
+
