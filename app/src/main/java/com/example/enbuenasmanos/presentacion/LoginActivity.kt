@@ -19,7 +19,7 @@ class LoginActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityLoginBinding.inflate(layoutInflater)
         setContentView(binding.root)
-
+        //test
         binding.btnForget.setOnClickListener() {
             Toast.makeText(this, "Pantalla en construcción", Toast.LENGTH_SHORT).show()
         }
