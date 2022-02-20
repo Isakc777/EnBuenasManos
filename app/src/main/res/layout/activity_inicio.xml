@@ -13,7 +13,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="40dp"
-        android:fontFamily="@font/merriweather_bold"
+        android:fontFamily="@font/muli_black"
         android:text="EnBuenasManos"
         android:textAlignment="center"
         android:textColor="#73D3BC"
@@ -42,7 +42,7 @@
         android:layout_height="46dp"
         android:layout_marginTop="36dp"
         android:background="@drawable/button_rounded"
-        android:fontFamily="@font/merriweather_bold"
+        android:fontFamily="@font/muli_black"
         android:text="Iniciar Sesion"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -53,8 +53,9 @@
         android:layout_width="125dp"
         android:layout_height="28dp"
         android:layout_marginTop="24dp"
-        android:fontFamily="@font/merriweather_bold"
+        android:fontFamily="@font/muli_black"
         android:text="Registrate:"
+        android:textStyle="bold"
         android:textColor="#757575"
         android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -63,12 +64,11 @@
         app:layout_constraintTop_toBottomOf="@+id/btnIniciarSesion" />
 
     <Button
-        android:id="@+id/button3"
+        android:id="@+id/btnRegistroCuidador"
         android:layout_width="351dp"
         android:layout_height="46dp"
         android:layout_marginTop="40dp"
         android:background="@drawable/button_rounded_border"
-        android:fontFamily="@font/merriweather_bold"
         android:text="COMO CUIDADOR"
         android:textColor="#757575"
         app:layout_constraintEnd_toEndOf="parent"
@@ -77,17 +77,16 @@
         app:layout_constraintTop_toBottomOf="@+id/textView2" />
 
     <Button
-        android:id="@+id/button4"
+        android:id="@+id/btnRegistroProfesional"
         android:layout_width="351dp"
         android:layout_height="46dp"
         android:layout_marginTop="28dp"
         android:background="@drawable/button_rounded_border"
-        android:fontFamily="@font/merriweather_bold"
         android:text="COMO PROFESIONAL DE LA SALUD"
         android:textColor="#757575"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button3" />
+        app:layout_constraintTop_toBottomOf="@+id/btnRegistroCuidador" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

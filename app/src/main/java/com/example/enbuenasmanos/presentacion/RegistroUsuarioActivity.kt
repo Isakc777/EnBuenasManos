@@ -6,29 +6,27 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
 import android.view.inputmethod.InputMethodManager
+import com.example.enbuenasmanos.R
 import com.example.enbuenasmanos.databinding.ActivityInicioBinding
+import com.example.enbuenasmanos.databinding.ActivityRegistroUsuarioBinding
 
-class InicioActivity : AppCompatActivity() {
-    private lateinit var binding: ActivityInicioBinding
+class RegistroUsuarioActivity : AppCompatActivity() {
+    private lateinit var binding: ActivityRegistroUsuarioBinding
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        binding = ActivityInicioBinding.inflate(layoutInflater)
+        binding = ActivityRegistroUsuarioBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        binding.btnIniciarSesion.setOnClickListener()
+        binding.btnExisteCuenta.setOnClickListener()
         {
             var intent = Intent(this, LoginActivity::class.java)
             startActivity(intent)
         }
-        binding.btnRegistroCuidador.setOnClickListener()
-        {
-            var intent = Intent(this, RegistroUsuarioActivity::class.java)
-            startActivity(intent)
-        }
-        binding.inicio.setOnClickListener() {
+        binding.registroUsuario.setOnClickListener() {
             hiddenIME(binding.root)
         }
     }
+    //Metodo para dar clic y ocultar el teclado
     fun hiddenIME(view: View) {
         val imm =
             getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager
