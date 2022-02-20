@@ -19,6 +19,12 @@
         <entry key="..\:/Dispositivos_Moviles/EnBuenasManos/app/src/main/res/layout/fragment_one_comunidad.xml" value="0.1" />
         <entry key="..\:/Dispositivos_Moviles/EnBuenasManos/app/src/main/res/layout/item_comunidad_list.xml" value="0.1" />
         <entry key="..\:/Dispositivos_Moviles/EnBuenasManos/app/src/main/res/menu/bottom_bar_menu.xml" value="0.25" />
+        <entry key="..\:/Dispositivos_Moviles/github/EnBuenasManos/app/src/main/res/drawable/button_rounded.xml" value="0.1" />
+        <entry key="..\:/Dispositivos_Moviles/github/EnBuenasManos/app/src/main/res/drawable/button_rounded_border.xml" value="0.25" />
+        <entry key="..\:/Dispositivos_Moviles/github/EnBuenasManos/app/src/main/res/font/muli_black1.xml" value="0.22666666666666666" />
+        <entry key="..\:/Dispositivos_Moviles/github/EnBuenasManos/app/src/main/res/layout/activity_inicio.xml" value="0.25" />
+        <entry key="..\:/Dispositivos_Moviles/github/EnBuenasManos/app/src/main/res/layout/activity_login.xml" value="0.25" />
+        <entry key="..\:/Dispositivos_Moviles/github/EnBuenasManos/app/src/main/res/layout/activity_principal.xml" value="0.11503623188405797" />
         <entry key="..\:/Users/isaag/AndroidStudioProjects/EnBuenasManos/app/src/main/res/drawable/button_rounded.xml" value="0.2074074074074074" />
         <entry key="..\:/Users/isaag/AndroidStudioProjects/EnBuenasManos/app/src/main/res/drawable/button_rounded_border.xml" value="0.1" />
         <entry key="..\:/Users/isaag/AndroidStudioProjects/EnBuenasManos/app/src/main/res/font/merriweather_bold.xml" value="0.1" />

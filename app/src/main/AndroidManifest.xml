@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
-<manifest xmlns:android="http://schemas.android.com/apk/res/android"    package="com.example.enbuenasmanos">
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.example.enbuenasmanos">
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -21,6 +23,7 @@
         <activity
             android:name=".presentacion.LoginActivity"
             android:exported="false"/>
+
         <meta-data
             android:name="preloaded_fonts"
             android:resource="@array/preloaded_fonts" />

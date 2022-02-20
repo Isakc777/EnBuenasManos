@@ -64,7 +64,7 @@
 
     <Button
         android:id="@+id/button3"
-        android:layout_width="271dp"
+        android:layout_width="351dp"
         android:layout_height="46dp"
         android:layout_marginTop="40dp"
         android:background="@drawable/button_rounded_border"
@@ -78,7 +78,7 @@
 
     <Button
         android:id="@+id/button4"
-        android:layout_width="275dp"
+        android:layout_width="351dp"
         android:layout_height="46dp"
         android:layout_marginTop="28dp"
         android:background="@drawable/button_rounded_border"
