@@ -1,6 +1,7 @@
 package com.example.enbuenasmanos.presentacion
 
 import android.content.Context
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
@@ -14,6 +15,11 @@ class LoginActivity : AppCompatActivity() {
         binding = ActivityLoginBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+        binding.btnLogin.setOnClickListener()
+        {
+            var intent = Intent(this, PrincipalActivity::class.java)
+            startActivity(intent)
+        }
         binding.login.setOnClickListener() {
             hiddenIME(binding.root)
         }
