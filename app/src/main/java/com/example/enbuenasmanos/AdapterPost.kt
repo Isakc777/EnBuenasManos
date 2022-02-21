@@ -57,14 +57,14 @@ class AdapterPost(
         //formato de fecha
         val dateFormat =  SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss") // convertir de 2022-02-20T15:13:00-08:00
         val dateFormat2 = SimpleDateFormat("dd/MM/yyyy K:mm a")// convertir a 20/10/2022 13:00 PM
-        val formattedDate = ""
+        var formattedDate = ""
 
         try {
             val date = dateFormat.parse(published)
-           // formattedDate = dateFormat2.format(date) reviar luego xd
+            formattedDate = dateFormat2.format(date) //revisar
         }catch (e:Exception){
             //en caso de excepcion establecemos lo mismo que obtengamos con la API
-            //formattedDate = published
+            formattedDate = published
             e.printStackTrace()
         }
 
