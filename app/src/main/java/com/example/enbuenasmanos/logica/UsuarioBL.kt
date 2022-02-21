@@ -8,4 +8,5 @@ class UsuarioBL {
         var us = UsuarioUseCase().getUserNameAndPass(name, pass)
         return (us.id == "-1L")
     }
+
 }

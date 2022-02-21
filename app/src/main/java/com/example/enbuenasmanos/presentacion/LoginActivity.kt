@@ -6,6 +6,8 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
 import android.view.inputmethod.InputMethodManager
+import com.example.enbuenasmanos.R
+import com.example.enbuenasmanos.controladores.UsuarioController
 import com.example.enbuenasmanos.databinding.ActivityLoginBinding
 
 class LoginActivity : AppCompatActivity() {
@@ -17,8 +19,17 @@ class LoginActivity : AppCompatActivity() {
 
         binding.btnLogin.setOnClickListener()
         {
-            var intent = Intent(this, PrincipalActivity::class.java)
-            startActivity(intent)
+            val access = UsuarioController().LoginUser(
+                binding.txtEmailAddress.text.toString(),
+                binding.txtPassword.text.toString()
+            )
+            if (access) {
+                binding.txtEmailAddress.error = getString(R.string.error)
+            } else {
+                binding.txtEmailAddress.error = null
+                var intent = Intent(this, PrincipalActivity::class.java)
+                startActivity(intent)
+            }
         }
         binding.login.setOnClickListener() {
             hiddenIME(binding.root)

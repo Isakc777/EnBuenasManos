@@ -9,3 +9,4 @@ data class Usuario(var id: String = "-1L", var nombre: String = "", var password
         this.id = UUID.randomUUID().toString()
     }
 }
+
