@@ -35,7 +35,7 @@ class LoginActivity : AppCompatActivity() {
                 binding.emailField.error = getString(R.string.error)
             } else {
                 binding.emailField.error = null
-                var intent = Intent(this, MainActivity::class.java)
+                var intent = Intent(this, MainActivity::class.java) //pantalla incio
                 startActivity(intent)
             }
         }

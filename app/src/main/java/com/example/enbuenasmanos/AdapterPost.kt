@@ -15,9 +15,8 @@ import java.text.SimpleDateFormat
 
 class AdapterPost(
     //agregamos contructor incluyendo contexto y clase
-    private val context: Context,
+    private val context:Context,
     private val postArrayList: ArrayList<ModelPost>
-
 ) : RecyclerView.Adapter<AdapterPost.HolderPost>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): HolderPost {
@@ -31,10 +30,10 @@ class AdapterPost(
         val model = postArrayList[position]//obtener datos de una posicionn especificada de la lista / indice de la lista
         //obtener datos
         val authorName = model.authorName
-        val content = model.content // esto esta en formato HTM, convertiremos este a texto simple usando JSOUP 'org.jsoup:jsoup:1.14.3'
+        val content = model.content // esto esta en formato HTM, convertiremos este a texto simple usando JSOUP 'org.jsoup:jsoup:1.14.3
         val id = model.id
         val published = model.published //fecha de publicacion, se necesita dar formato
-        val selftLink = model.selfLink
+        val selfLink = model.selfLink
         val title = model.title
         val updated = model.updated//fecha editada/actualizada
         val url = model.url
