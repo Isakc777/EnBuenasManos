@@ -1,6 +1,5 @@
 
 package com.example.enbuenasmanos.presentacion
-//coment
 import android.content.Context
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
