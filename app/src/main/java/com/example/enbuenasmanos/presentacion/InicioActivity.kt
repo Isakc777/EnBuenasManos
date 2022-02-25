@@ -17,7 +17,7 @@ class InicioActivity : AppCompatActivity() {
 
         binding.btnIniciarSesion.setOnClickListener()
         {
-            var intent = Intent(this, PrincipalActivity::class.java)
+            var intent = Intent(this, LoginActivity::class.java)
             startActivity(intent)
         }
         binding.inicio.setOnClickListener() {
