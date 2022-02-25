@@ -20,6 +20,11 @@ class InicioActivity : AppCompatActivity() {
             var intent = Intent(this, LoginActivity::class.java)
             startActivity(intent)
         }
+        binding.btnRegistroCuidador.setOnClickListener()
+        {
+            var intent = Intent(this,RegistroUsuarioActivity::class.java)
+            startActivity(intent)
+        }
         binding.inicio.setOnClickListener() {
             hiddenIME(binding.root)
         }
