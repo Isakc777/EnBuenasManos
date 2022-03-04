@@ -2,21 +2,18 @@ package com.example.enbuenasmanos
 
 import android.app.ProgressDialog
 import android.os.Bundle
-import android.os.PersistableBundle
-import android.provider.Settings.Global.getString
-import android.provider.Settings.Secure.getString
-import android.provider.Settings.System.getString
+
 import android.util.Log
 import android.widget.Toast
-import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.content.res.TypedArrayUtils.getString
-import androidx.recyclerview.widget.RecyclerView
 import com.android.volley.Request
 import com.android.volley.toolbox.StringRequest
 import com.android.volley.toolbox.Volley
 import kotlinx.android.synthetic.main.activity_main.*
 import org.json.JSONObject
+enum class ProviderType{
+    BASIC
+}
 
 class MainActivity : AppCompatActivity() {
 
