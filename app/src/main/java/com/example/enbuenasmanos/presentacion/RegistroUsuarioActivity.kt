@@ -14,7 +14,6 @@ import com.google.firebase.auth.FirebaseAuth
 
 class RegistroUsuarioActivity : AppCompatActivity() {
     private lateinit var binding: ActivityRegistroUsuarioBinding
-    //val app by lazy { applicationContext as UsuarioApp }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
