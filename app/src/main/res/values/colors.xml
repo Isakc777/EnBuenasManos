@@ -9,6 +9,7 @@
     <color name="white">#FFFFFFFF</color>
     <color name="turquesa">#73D3BC</color>
     <color name="gris_claro">#ecf0f1</color>
+    <color name="gray0">#eee</color>
     <color name="gray1">#8F8E8E</color>
     <color name="gray2">#BCBABA</color>
     <!-- Login -->
