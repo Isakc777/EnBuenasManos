@@ -2,6 +2,7 @@ package com.example.enbuenasmanos
 
 import android.app.ProgressDialog
 import android.os.Bundle
+import android.text.TextUtils
 
 import android.util.Log
 import android.widget.Toast
@@ -24,6 +25,7 @@ class MainActivity : AppCompatActivity() {
     private lateinit var adapterPost: AdapterPost
 
     private lateinit var progressDialog: ProgressDialog
+    private var isSearch = false
     private val TAG = "MAIN_TAG"
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -42,12 +44,34 @@ class MainActivity : AppCompatActivity() {
 
         // manejar clic, cargar más publicaciones
         loadMoreBtn.setOnClickListener {
-            loadPosts()
+            val query = searchEt.text.toString().trim()
+            if(TextUtils.isEmpty(query)){
+                loadPosts()
+            }else{
+                searchPosts(query)
+            }
+        }
+        //buscar
+        searchBtn.setOnClickListener{
+            nextToken=""
+            url=""
+
+            postArrayList = ArrayList()
+            postArrayList.clear()
+            loadMoreBtn.isEnabled = true
+            val query = searchEt.text.toString().trim()
+            if(TextUtils.isEmpty(query)){
+                loadPosts()
+            }else{
+                searchPosts(query)
+            }
         }
 
     }
 
     private fun loadPosts(){
+        isSearch = false
+
         progressDialog.show()
 
         url = when(nextToken){
@@ -89,7 +113,110 @@ class MainActivity : AppCompatActivity() {
 
                 //obtener datos de matriz json del objeto json
                 var jsonArray = jsonObject.getJSONArray("items")
-                //continue getting data untill completed all
+                //continuar obteniendo datos hasta completartodo
+                for(i in 0 until jsonArray.length()){
+                    try {
+                        val jsonObject01 = jsonArray.getJSONObject(i)
+
+                        val id = jsonObject01.getString("id");
+                        val title = jsonObject01.getString("title");
+                        val content = jsonObject01.getString("content");
+                        val published = jsonObject01.getString("published");
+                        val updated = jsonObject01.getString("updated");
+                        val url = jsonObject01.getString("url");
+                        val selfLink = jsonObject01.getString("selfLink");
+                        val authorName = jsonObject01.getJSONObject("author").getString("displayName");
+                        // val image = jsonObject01.getJSONObject("author").getString("image");
+
+
+                        //Establecer datos
+                        val modelPost = ModelPost(
+                            "$authorName",
+                            "$content",
+                            "$id",
+                            "$published",
+                            "$selfLink",
+                            "$title",
+                            "$updated",
+                            "$url"
+
+                        )
+                        //AGREGAR DATOS A LA LISTA
+
+                        postArrayList.add(modelPost)
+                    }catch (e:java.lang.Exception){
+                        Log.d(TAG, "loadPosts: 1 ${e.message}")
+                        Toast.makeText(this, "${e.message}", Toast.LENGTH_SHORT).show()
+                    }
+                }
+
+                //adaptador de configuracion
+                adapterPost = AdapterPost(this@MainActivity, postArrayList)
+                // configurar adaptador para recyclerview
+                postsRv.adapter =adapterPost
+                //findViewById<RecyclerView>(R.id.postsRv).adapter =adapterPost
+                progressDialog.dismiss()
+
+            }catch (e:Exception){
+                Log.d(TAG, "loadPosts: 2 ${e.message} ")
+                Toast.makeText(this, "${e.message}", Toast.LENGTH_SHORT).show()
+            }
+
+        }, { error ->
+            Log.d(TAG, "loadPosts: ${error.message}")
+            Toast.makeText(this, "${error.message}", Toast.LENGTH_SHORT).show()
+        })
+
+
+        //agregar solicitud en cola
+        val requestQueue = Volley.newRequestQueue(this)
+        requestQueue.add(stringRequest)
+    }
+
+    private fun searchPosts(query: String){
+        isSearch = true
+        progressDialog.show()
+
+        url = when(nextToken){
+            "" -> {
+                Log.d(TAG, "searchPosts: NextPage Tokens está vacío, más publicaciones")
+                ("https://www.googleapis.com/blogger/v3/blogs/${Constants.BLOG_ID}/posts/search?q=$query&key=${Constants.API_KEY}")
+            }
+            "end" -> {
+                Log.d(TAG, "searchPosts: El token de la página siguiente ha terminado, no hay mas publicaciones, es decir, se cargaron todas las publicaciones")
+                Toast.makeText(this, "No más publicaciones...", Toast.LENGTH_SHORT).show()
+                progressDialog.dismiss()
+                return
+            }
+            else -> {
+                Log.d(TAG, "searchPosts: NextPage token: $nextToken")
+                ("https://www.googleapis.com/blogger/v3/blogs/${Constants.BLOG_ID}/posts/search?q=$query&pageToken=$nextToken&key=${Constants.API_KEY}")
+            }
+        }
+
+        Log.d(TAG, "searchPosts: URL: $url")
+
+        //Solicitar datos, Metodo GET
+        val stringRequest = StringRequest(Request.Method.GET, url, {response ->
+            //recibimos respuesta, para descartar el diálogo primero
+            progressDialog.dismiss()
+            Log.d(TAG, "searchPosts: $response")
+            /*Los datos JSON son parámetros/variables de respuesta, pueden causar una excepción al analizar/formatear, así que intente capturar*/
+            try {
+                //Nosotros tenemos respuesta como Objeto JSON
+                val jsonObject = JSONObject(response)
+                try {
+                    nextToken = jsonObject.getString("nextPageToken")
+                    Log.d(TAG, "searchPosts: NextPageToken: $nextToken")
+                }catch (e:Exception){
+                    Toast.makeText(this, "Llegó al final de la página...", Toast.LENGTH_SHORT).show()
+                    Log.d(TAG, "searchPosts: Llegó al final de la página...")
+                    nextToken="end"
+                }
+
+                //obtener datos de matriz json del objeto json
+                var jsonArray = jsonObject.getJSONArray("items")
+                //continuar obteniendo datos hasta completartodo
                 for(i in 0 until jsonArray.length()){
                     try {
                         val jsonObject01 = jsonArray.getJSONObject(i)
