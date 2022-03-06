@@ -1,6 +1,7 @@
 package com.example.enbuenasmanos;
 
 import android.content.Context
+import android.content.Intent
 import android.view.LayoutInflater
 import android.view.View;
 import android.view.ViewGroup
@@ -23,6 +24,7 @@ class AdapterPost(
         //diseño row_post.xml
         val view = LayoutInflater.from(context).inflate(R.layout.row_post, parent, false)
         return HolderPost(view)
+
     }
 
     override fun onBindViewHolder(holder: HolderPost, position: Int) {
@@ -70,6 +72,14 @@ class AdapterPost(
         holder.titleTv.text = title
         holder.descriptionTv.text =document.text()
         holder.publishInfoTv.text = "Por $authorName $formattedDate" // ejemplo Por Isaac Hernandez, 20/102/2022 13:00 Pm
+
+        /* manejar el elemento clic , mostrar el detalle de la publicación,
+         * pasar postId con la intención de mostrar sus detalles*/
+        holder.itemView.setOnClickListener{
+            val intent = Intent(context, PostDetailsActivity::class.java)
+            intent.putExtra("postId", id)// clave, valor: pasamos la identificación de la publicación que se usará para obtener los detalles de la publicación en PostDetailsActivity
+            context.startActivity(intent)
+        }
     }
 
 
