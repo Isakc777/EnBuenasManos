@@ -21,8 +21,11 @@ class PostDetailsActivity : AppCompatActivity() {
     private var postId:String? = null // obtendremos el intento, y pasamos a AdparterPost
     private val TAG ="POST_DETAILS_TAG"
 
-    //barra de acciones
+    //actionbar
     private lateinit var actionBar:ActionBar
+
+    private lateinit var labelArrayList: ArrayList<ModelLabel>
+    private lateinit var adapterLabel: AdapterLabel
 
 
 
@@ -91,6 +94,28 @@ class PostDetailsActivity : AppCompatActivity() {
                 //el contenido contiene una página web como html, así que cargue en la vista web
                 webView.loadDataWithBaseURL(null, content, "text/html", OutputKeys.ENCODING, null)
 
+                // obtenemos las etiquetas, respuesta del detalle de la publicación: la API de publicación específica también contiene una variedad de etiquetas de esa publicación
+                try {
+                    labelArrayList = ArrayList()
+                    labelArrayList.clear()
+                    val jsonArray = jsonObject.getJSONArray("labels")
+                    for (i in 0 until jsonArray.length()){
+                       //obtenemos las etiquetas
+                        val label = jsonArray.getString(i)
+                        // agregar datos del modelo
+                        val modelLabel = ModelLabel(label)
+                        //agragar modelo a la listA
+                        labelArrayList.add(modelLabel)
+                    }
+                    //CONFIGURACION DEL ADAPTADOR para etiquetas
+                    adapterLabel = AdapterLabel(this@PostDetailsActivity, labelArrayList)
+                    //establecer el adaptador
+                    labelsRv.adapter = adapterLabel
+
+
+                }catch (e:Exception){
+                    Log.d(TAG, "loadPostDetails: ${e.message}")
+                }
 
             } catch (e:Exception){
                 Log.d(TAG, "loadPostDetails: ${e.message}")
