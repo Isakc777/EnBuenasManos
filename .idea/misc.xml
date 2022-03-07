@@ -26,13 +26,15 @@
         <entry key="..\:/Users/isaag/AndroidStudioProjects/EnBuenasManos/app/src/main/res/drawable/ic_next_black.xml" value="0.1" />
         <entry key="..\:/Users/isaag/AndroidStudioProjects/EnBuenasManos/app/src/main/res/drawable/shape_rect01.xml" value="0.1787037037037037" />
         <entry key="..\:/Users/isaag/AndroidStudioProjects/EnBuenasManos/app/src/main/res/drawable/shape_rect02.xml" value="0.1787037037037037" />
+        <entry key="..\:/Users/isaag/AndroidStudioProjects/EnBuenasManos/app/src/main/res/drawable/shape_rect03.xml" value="0.2" />
         <entry key="..\:/Users/isaag/AndroidStudioProjects/EnBuenasManos/app/src/main/res/font/merriweather_bold.xml" value="0.1" />
         <entry key="..\:/Users/isaag/AndroidStudioProjects/EnBuenasManos/app/src/main/res/font/merriweather_light.xml" value="0.1" />
         <entry key="..\:/Users/isaag/AndroidStudioProjects/EnBuenasManos/app/src/main/res/font/muli_black.xml" value="0.17222222222222222" />
         <entry key="..\:/Users/isaag/AndroidStudioProjects/EnBuenasManos/app/src/main/res/layout/activity_inicio.xml" value="0.2" />
         <entry key="..\:/Users/isaag/AndroidStudioProjects/EnBuenasManos/app/src/main/res/layout/activity_login.xml" value="0.14" />
         <entry key="..\:/Users/isaag/AndroidStudioProjects/EnBuenasManos/app/src/main/res/layout/activity_main.xml" value="0.25" />
-        <entry key="..\:/Users/isaag/AndroidStudioProjects/EnBuenasManos/app/src/main/res/layout/activity_post_details.xml" value="0.33" />
+        <entry key="..\:/Users/isaag/AndroidStudioProjects/EnBuenasManos/app/src/main/res/layout/activity_post_details.xml" value="0.22" />
+        <entry key="..\:/Users/isaag/AndroidStudioProjects/EnBuenasManos/app/src/main/res/layout/row_label.xml" value="0.18385416666666668" />
         <entry key="..\:/Users/isaag/AndroidStudioProjects/EnBuenasManos/app/src/main/res/layout/row_post.xml" value="0.1" />
       </map>
     </option>
