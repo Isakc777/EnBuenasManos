@@ -30,6 +30,8 @@
         <entry key="..\:/Users/isaag/AndroidStudioProjects/EnBuenasManos/app/src/main/res/drawable/ic_next_black.xml" value="0.1" />
         <entry key="..\:/Users/isaag/AndroidStudioProjects/EnBuenasManos/app/src/main/res/drawable/ic_question_answer.xml" value="0.19947916666666668" />
         <entry key="..\:/Users/isaag/AndroidStudioProjects/EnBuenasManos/app/src/main/res/drawable/ic_search_black.xml" value="0.19947916666666668" />
+        <entry key="..\:/Users/isaag/AndroidStudioProjects/EnBuenasManos/app/src/main/res/drawable/shape_btn02.xml" value="0.19814814814814816" />
+        <entry key="..\:/Users/isaag/AndroidStudioProjects/EnBuenasManos/app/src/main/res/drawable/shape_button03.xml" value="0.19814814814814816" />
         <entry key="..\:/Users/isaag/AndroidStudioProjects/EnBuenasManos/app/src/main/res/drawable/shape_edittext01.xml" value="0.19947916666666668" />
         <entry key="..\:/Users/isaag/AndroidStudioProjects/EnBuenasManos/app/src/main/res/drawable/shape_rect01.xml" value="0.1787037037037037" />
         <entry key="..\:/Users/isaag/AndroidStudioProjects/EnBuenasManos/app/src/main/res/drawable/shape_rect02.xml" value="0.1787037037037037" />
@@ -41,7 +43,7 @@
         <entry key="..\:/Users/isaag/AndroidStudioProjects/EnBuenasManos/app/src/main/res/font/muli_black.xml" value="0.17222222222222222" />
         <entry key="..\:/Users/isaag/AndroidStudioProjects/EnBuenasManos/app/src/main/res/layout/activit_forum.xml" value="0.18333333333333332" />
         <entry key="..\:/Users/isaag/AndroidStudioProjects/EnBuenasManos/app/src/main/res/layout/activity_add_questions.xml" value="0.19074074074074074" />
-        <entry key="..\:/Users/isaag/AndroidStudioProjects/EnBuenasManos/app/src/main/res/layout/activity_forum.xml" value="0.14" />
+        <entry key="..\:/Users/isaag/AndroidStudioProjects/EnBuenasManos/app/src/main/res/layout/activity_forum.xml" value="0.18" />
         <entry key="..\:/Users/isaag/AndroidStudioProjects/EnBuenasManos/app/src/main/res/layout/activity_forum2.xml" value="0.16927083333333334" />
         <entry key="..\:/Users/isaag/AndroidStudioProjects/EnBuenasManos/app/src/main/res/layout/activity_inicio.xml" value="0.2" />
         <entry key="..\:/Users/isaag/AndroidStudioProjects/EnBuenasManos/app/src/main/res/layout/activity_login.xml" value="0.14" />
@@ -50,6 +52,7 @@
         <entry key="..\:/Users/isaag/AndroidStudioProjects/EnBuenasManos/app/src/main/res/layout/activity_principal.xml" value="0.18333333333333332" />
         <entry key="..\:/Users/isaag/AndroidStudioProjects/EnBuenasManos/app/src/main/res/layout/row_label.xml" value="0.18385416666666668" />
         <entry key="..\:/Users/isaag/AndroidStudioProjects/EnBuenasManos/app/src/main/res/layout/row_post.xml" value="0.1" />
+        <entry key="..\:/Users/isaag/AndroidStudioProjects/EnBuenasManos/app/src/main/res/layout/row_questions.xml" value="0.2" />
       </map>
     </option>
   </component>
