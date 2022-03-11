@@ -13,6 +13,12 @@
         android:theme="@style/Theme.AppCompat"
         android:usesCleartextTraffic="true">
         <activity
+            android:name=".ForumActivity"
+            android:exported="false" />
+        <activity
+            android:name=".AddQuestionsActivity"
+            android:exported="false" />
+        <activity
             android:name=".presentacion.InicioActivity"
             android:exported="true">
             <intent-filter>
@@ -36,6 +42,7 @@
         <activity
             android:name=".PostDetailsActivity"
             android:exported="false" />
+
         <meta-data
             android:name="preloaded_fonts"
             android:resource="@array/preloaded_fonts" />
