@@ -75,7 +75,7 @@ class LoginActivity : AppCompatActivity() {
 
     private fun showHome(email:String,provider:ProviderType){
         val password:String = binding.txtPassword.text.toString()
-        var intent = Intent(this, MainActivity::class.java).apply {
+        var intent = Intent(this, PrincipalActivity::class.java).apply {
             putExtra("email",email)
             putExtra("provider",provider.name)
             putExtra("password",password)

@@ -7,4 +7,7 @@
     <string name="Consejos">Consejos</string>
     <string name="perfil_cuidador">Mi perfil</string>
     <string name="profesionales">Ayuda Profesional</string>
+    <string name="exit">Salir</string>
+    <string name="content_description_exit">Salir</string>
+    <string name="page_title">EnBuenasManos</string>
 </resources>
