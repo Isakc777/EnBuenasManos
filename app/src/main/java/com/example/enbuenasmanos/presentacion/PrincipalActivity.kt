@@ -20,7 +20,7 @@ class PrincipalActivity : AppCompatActivity() {
         binding = ActivityPrincipalBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        //setup
+        //metodo setup
         val bundle:Bundle? =intent.extras
         val email:String? = bundle?.getString("email")
         val provider:String? = bundle?.getString("provider")
