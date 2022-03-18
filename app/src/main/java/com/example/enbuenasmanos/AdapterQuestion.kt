@@ -6,13 +6,14 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.*
+import androidx.fragment.app.FragmentActivity
 import androidx.recyclerview.widget.RecyclerView
 import com.example.enbuenasmanos.databinding.RowQuestionsBinding
 import com.google.firebase.database.FirebaseDatabase
 
 class AdapterQuestion :RecyclerView.Adapter<AdapterQuestion.HolderQuestion>, Filterable{
 
-    private val context: Context
+    private val context: Context?
     public var questionArrayList: ArrayList<ModelQuestion>
     private var filterList: ArrayList<ModelQuestion>
 
@@ -20,7 +21,7 @@ class AdapterQuestion :RecyclerView.Adapter<AdapterQuestion.HolderQuestion>, Fil
 
     private lateinit var binding: RowQuestionsBinding
     //constructor
-    constructor(context: Context, questionArrayList: ArrayList<ModelQuestion>) {
+    constructor(context: FragmentActivity?, questionArrayList: ArrayList<ModelQuestion>) {
         this.context = context
         this.questionArrayList = questionArrayList
         this.filterList = questionArrayList

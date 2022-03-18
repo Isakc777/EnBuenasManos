@@ -1,11 +1,13 @@
 package com.example.enbuenasmanos
 
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.text.Editable
 import android.text.TextWatcher
-import com.example.enbuenasmanos.databinding.ActivityAddQuestionsBinding
+import android.view.LayoutInflater
+import android.view.View
+import android.view.ViewGroup
+import androidx.fragment.app.Fragment
 import com.example.enbuenasmanos.databinding.ActivityForumBinding
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.DataSnapshot
@@ -13,7 +15,7 @@ import com.google.firebase.database.DatabaseError
 import com.google.firebase.database.FirebaseDatabase
 import com.google.firebase.database.ValueEventListener
 
-class ForumActivity : AppCompatActivity() {
+class ForumActivity : Fragment() {
 
     //view biding
     private lateinit var binding: ActivityForumBinding
@@ -28,11 +30,17 @@ class ForumActivity : AppCompatActivity() {
     //adaptador
     private lateinit var adapterQuestion: AdapterQuestion
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        binding = ActivityForumBinding.inflate(layoutInflater)
-        setContentView(binding.root)
+    override fun onCreateView(
+        inflater: LayoutInflater,
+        container: ViewGroup?,
+        savedInstanceState: Bundle?
+    ): View? {
+        binding = ActivityForumBinding.inflate(inflater, container, false)
+        return binding.root
+    }
 
+    override fun onStart() {
+        super.onStart()
         //inicio, autorizacion de firebase
         firebaseAuth = FirebaseAuth.getInstance()
         loadQuestions()
@@ -64,9 +72,8 @@ class ForumActivity : AppCompatActivity() {
 
         //click, para abrir la pagina para a agregar pregunta
         binding.addQuestionBtn.setOnClickListener{
-            startActivity(Intent(this, AddQuestionsActivity::class.java ))
+            startActivity(Intent(activity, AddQuestionsActivity::class.java ))
         }
-
     }
 
     private fun loadQuestions() {
@@ -87,7 +94,7 @@ class ForumActivity : AppCompatActivity() {
                     questionArrayList.add(model!!)
                 }
                 //configuracion del adaptador
-                adapterQuestion = AdapterQuestion(this@ForumActivity, questionArrayList)
+                adapterQuestion = AdapterQuestion(activity, questionArrayList)
                 // adaptador enviado a recyclerview
                 binding.questionsRv.adapter = adapterQuestion
 

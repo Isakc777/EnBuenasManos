@@ -8,7 +8,7 @@ import android.view.View
 import android.view.inputmethod.InputMethodManager
 import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
-import com.example.enbuenasmanos.ProviderType
+//import com.example.enbuenasmanos.ProviderType
 import com.example.enbuenasmanos.databinding.ActivityRegistroUsuarioBinding
 import com.google.firebase.auth.FirebaseAuth
 
