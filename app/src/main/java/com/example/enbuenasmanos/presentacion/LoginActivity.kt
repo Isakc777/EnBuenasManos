@@ -9,7 +9,7 @@ import android.view.View
 import android.view.inputmethod.InputMethodManager
 import androidx.appcompat.app.AlertDialog
 import com.example.enbuenasmanos.MainActivity
-import com.example.enbuenasmanos.ProviderType
+//import com.example.enbuenasmanos.ProviderType
 import com.example.enbuenasmanos.databinding.ActivityLoginBinding
 import com.google.firebase.auth.FirebaseAuth
 

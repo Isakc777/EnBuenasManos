@@ -5,18 +5,19 @@ import android.os.Bundle
 import android.text.TextUtils
 
 import android.util.Log
+import android.view.LayoutInflater
+import android.view.View
+import android.view.ViewGroup
 import android.widget.Toast
-import androidx.appcompat.app.AppCompatActivity
+import androidx.fragment.app.Fragment
 import com.android.volley.Request
 import com.android.volley.toolbox.StringRequest
 import com.android.volley.toolbox.Volley
+import com.example.enbuenasmanos.databinding.ActivityMainBinding
 import kotlinx.android.synthetic.main.activity_main.*
 import org.json.JSONObject
-enum class ProviderType{
-    BASIC
-}
 
-class MainActivity : AppCompatActivity() {
+class MainActivity : Fragment() {
 
     private var url = "" //completamos con la url para recuperar la publicacion
     private var nextToken = "" //token de la pagina siguiente para liderar proximas y mas publicaciones
@@ -27,13 +28,21 @@ class MainActivity : AppCompatActivity() {
     private lateinit var progressDialog: ProgressDialog
     private var isSearch = false
     private val TAG = "MAIN_TAG"
+    private lateinit var binding: ActivityMainBinding
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
+    override fun onCreateView(
+        inflater: LayoutInflater, container: ViewGroup?,
+        savedInstanceState: Bundle?
+    ): View? {
+        binding = ActivityMainBinding.inflate(inflater, container, false)
+        return binding.root
 
+    }
+
+    override fun onStart() {
+        super.onStart()
         //Cuadro de diálogo de progreso de la configuración
-        progressDialog = ProgressDialog(this)
+        progressDialog = ProgressDialog(this.activity)
         progressDialog.setTitle("Por favor espere....")
 
         //Inicie y borre la lista antes de agregarle datos.
@@ -66,7 +75,6 @@ class MainActivity : AppCompatActivity() {
                 searchPosts(query)
             }
         }
-
     }
 
     private fun loadPosts(){
@@ -81,7 +89,7 @@ class MainActivity : AppCompatActivity() {
             }
             "end" -> {
                 Log.d(TAG, "loadPosts: El token de la página siguiente ha terminado, no hay mas publicaciones, es decir, se cargaron todas las publicaciones")
-                Toast.makeText(this, "No más publicaciones...", Toast.LENGTH_SHORT).show()
+                Toast.makeText(activity, "No más publicaciones...", Toast.LENGTH_SHORT).show()
                 progressDialog.dismiss()
                 return
             }
@@ -106,7 +114,7 @@ class MainActivity : AppCompatActivity() {
                     nextToken = jsonObject.getString("nextPageToken")
                     Log.d(TAG, "loadPosts: NextPageToken: $nextToken")
                 }catch (e:Exception){
-                    Toast.makeText(this, "Llegó al final de la página...", Toast.LENGTH_SHORT).show()
+                    Toast.makeText(activity, "Llegó al final de la página...", Toast.LENGTH_SHORT).show()
                     Log.d(TAG, "loadPosts: Llegó al final de la página...")
                     nextToken="end"
                 }
@@ -146,12 +154,12 @@ class MainActivity : AppCompatActivity() {
                         postArrayList.add(modelPost)
                     }catch (e:java.lang.Exception){
                         Log.d(TAG, "loadPosts: 1 ${e.message}")
-                        Toast.makeText(this, "${e.message}", Toast.LENGTH_SHORT).show()
+                        Toast.makeText(activity, "${e.message}", Toast.LENGTH_SHORT).show()
                     }
                 }
 
                 //adaptador de configuracion
-                adapterPost = AdapterPost(this@MainActivity, postArrayList)
+                adapterPost = AdapterPost(activity, postArrayList)
                 // configurar adaptador para recyclerview
                 postsRv.adapter =adapterPost
                 //findViewById<RecyclerView>(R.id.postsRv).adapter =adapterPost
@@ -159,17 +167,17 @@ class MainActivity : AppCompatActivity() {
 
             }catch (e:Exception){
                 Log.d(TAG, "loadPosts: 2 ${e.message} ")
-                Toast.makeText(this, "${e.message}", Toast.LENGTH_SHORT).show()
+                Toast.makeText(activity, "${e.message}", Toast.LENGTH_SHORT).show()
             }
 
         }, { error ->
             Log.d(TAG, "loadPosts: ${error.message}")
-            Toast.makeText(this, "${error.message}", Toast.LENGTH_SHORT).show()
+            Toast.makeText(activity, "${error.message}", Toast.LENGTH_SHORT).show()
         })
 
 
         //agregar solicitud en cola
-        val requestQueue = Volley.newRequestQueue(this)
+        val requestQueue = Volley.newRequestQueue(activity)
         requestQueue.add(stringRequest)
     }
 
@@ -184,7 +192,7 @@ class MainActivity : AppCompatActivity() {
             }
             "end" -> {
                 Log.d(TAG, "searchPosts: El token de la página siguiente ha terminado, no hay mas publicaciones, es decir, se cargaron todas las publicaciones")
-                Toast.makeText(this, "No más publicaciones...", Toast.LENGTH_SHORT).show()
+                Toast.makeText(activity, "No más publicaciones...", Toast.LENGTH_SHORT).show()
                 progressDialog.dismiss()
                 return
             }
@@ -209,7 +217,7 @@ class MainActivity : AppCompatActivity() {
                     nextToken = jsonObject.getString("nextPageToken")
                     Log.d(TAG, "searchPosts: NextPageToken: $nextToken")
                 }catch (e:Exception){
-                    Toast.makeText(this, "Llegó al final de la página...", Toast.LENGTH_SHORT).show()
+                    Toast.makeText(activity, "Llegó al final de la página...", Toast.LENGTH_SHORT).show()
                     Log.d(TAG, "searchPosts: Llegó al final de la página...")
                     nextToken="end"
                 }
@@ -249,12 +257,12 @@ class MainActivity : AppCompatActivity() {
                         postArrayList.add(modelPost)
                     }catch (e:java.lang.Exception){
                         Log.d(TAG, "loadPosts: 1 ${e.message}")
-                        Toast.makeText(this, "${e.message}", Toast.LENGTH_SHORT).show()
+                        Toast.makeText(activity, "${e.message}", Toast.LENGTH_SHORT).show()
                     }
                 }
 
                 //adaptador de configuracion
-                adapterPost = AdapterPost(this@MainActivity, postArrayList)
+                adapterPost = AdapterPost(activity, postArrayList)
                 // configurar adaptador para recyclerview
                 postsRv.adapter =adapterPost
                 //findViewById<RecyclerView>(R.id.postsRv).adapter =adapterPost
@@ -262,17 +270,17 @@ class MainActivity : AppCompatActivity() {
 
             }catch (e:Exception){
                 Log.d(TAG, "loadPosts: 2 ${e.message} ")
-                Toast.makeText(this, "${e.message}", Toast.LENGTH_SHORT).show()
+                Toast.makeText(activity, "${e.message}", Toast.LENGTH_SHORT).show()
             }
 
         }, { error ->
             Log.d(TAG, "loadPosts: ${error.message}")
-            Toast.makeText(this, "${error.message}", Toast.LENGTH_SHORT).show()
+            Toast.makeText(activity, "${error.message}", Toast.LENGTH_SHORT).show()
         })
 
 
         //agregar solicitud en cola
-        val requestQueue = Volley.newRequestQueue(this)
+        val requestQueue = Volley.newRequestQueue(activity)
         requestQueue.add(stringRequest)
     }
 }

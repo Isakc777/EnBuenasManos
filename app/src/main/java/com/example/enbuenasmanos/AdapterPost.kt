@@ -1,6 +1,5 @@
 package com.example.enbuenasmanos;
 
-import android.content.Context
 import android.content.Intent
 import android.view.LayoutInflater
 import android.view.View;
@@ -8,7 +7,7 @@ import android.view.ViewGroup
 import android.widget.ImageButton
 import android.widget.ImageView
 import android.widget.TextView
-import androidx.appcompat.view.menu.MenuView;
+import androidx.fragment.app.FragmentActivity
 import androidx.recyclerview.widget.RecyclerView;
 import com.squareup.picasso.Picasso
 import org.jsoup.Jsoup
@@ -16,7 +15,7 @@ import java.text.SimpleDateFormat
 
 class AdapterPost(
     //agregamos contructor incluyendo contexto y clase
-    private val context:Context,
+    private val context: FragmentActivity?,
     private val postArrayList: ArrayList<ModelPost>
 ) : RecyclerView.Adapter<AdapterPost.HolderPost>() {
 
@@ -78,7 +77,7 @@ class AdapterPost(
         holder.itemView.setOnClickListener{
             val intent = Intent(context, PostDetailsActivity::class.java)
             intent.putExtra("postId", id)// clave, valor: pasamos la identificación de la publicación que se usará para obtener los detalles de la publicación en PostDetailsActivity
-            context.startActivity(intent)
+            context?.startActivity(intent)
         }
     }
 
