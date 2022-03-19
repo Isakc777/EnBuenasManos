@@ -13,7 +13,9 @@
     <color name="gray0">#eee</color>
     <color name="gray1">#8F8E8E</color>
     <color name="gray2">#BCBABA</color>
-    <color name="gray3">#EFEFEF</color>
+    <color name="gray3">#EDEDED</color>
+    <color name="gray4">#FBFBFB</color>
+
     <!-- Login -->
     <color name="LoginBackground">#282b3a</color>
     <color name="LoginButton">#73D3BC</color>

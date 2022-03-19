@@ -13,6 +13,9 @@
         android:theme="@style/Theme.SinTema"
         android:usesCleartextTraffic="true">
         <activity
+            android:name=".DetailQuestionActivity"
+            android:exported="false" />
+        <activity
             android:name=".ForumActivity"
             android:exported="false" />
         <activity
