@@ -16,13 +16,13 @@
             android:name=".DetailQuestionActivity"
             android:exported="false" />
         <activity
-            android:name=".presentacion.InicioActivity"
+            android:name=".ForumActivity"
             android:exported="false" />
         <activity
             android:name=".AddQuestionsActivity"
             android:exported="false" />
         <activity
-            android:name=".ForumActivity"
+            android:name=".presentacion.InicioActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
