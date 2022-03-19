@@ -2,6 +2,7 @@ package com.example.enbuenasmanos
 
 import android.app.AlertDialog
 import android.content.Context
+import android.content.Intent
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -60,7 +61,14 @@ class AdapterQuestion :RecyclerView.Adapter<AdapterQuestion.HolderQuestion>, Fil
                     a.dismiss()
                 }
                 .show()
+        }
 
+        //al dar clic abrimos los detalles de la pregunta
+        holder.itemView.setOnClickListener{
+            val intent = Intent(context, DetailQuestionActivity::class.java)
+            intent.putExtra("questionId", id)
+            intent.putExtra("question", question)
+            context.startActivity(intent)
         }
 
     }
