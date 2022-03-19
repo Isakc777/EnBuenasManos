@@ -18,11 +18,11 @@
             android:id="@+id/backBtn"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:src="@drawable/ic_back_white"
-            android:background="@android:color/transparent"
             android:layout_centerVertical="true"
             android:layout_marginStart="10dp"
-            android:padding="5dp" />
+            android:background="@android:color/transparent"
+            android:padding="5dp"
+            android:src="@drawable/ic_back_white" />
 
         <!--Pregunta-->
         <TextView
@@ -32,6 +32,43 @@
             android:layout_centerHorizontal="true"
             android:text="Pregunta detallada"
             android:textColor="@color/black" />
+
+
+    </RelativeLayout>
+
+
+    <!--vista de separadora-->
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:layout_below="@+id/toolbarRl"
+        android:layout_marginTop="5dp"
+        android:background="@color/gray1" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/toolbarRl"
+        android:layout_marginTop="5dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Respuestas"
+            android:textColor="@color/black"
+            android:textSize="16sp"/>
+        <!--mostrar el dialogo y agregar respuestas-->
+        <ImageButton
+            android:id="@+id/addCommentBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@android:color/transparent"
+            android:padding="10dp"
+            android:src="@drawable/ic_comment_add_black"
+            android:layout_alignParentEnd="true"/>
+
+
 
 
     </RelativeLayout>
