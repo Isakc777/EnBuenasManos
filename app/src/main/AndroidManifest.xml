@@ -13,6 +13,12 @@
         android:theme="@style/Theme.SinTema"
         android:usesCleartextTraffic="true">
         <activity
+            android:name=".presentacion.TipousuarioActivity"
+            android:exported="false" />
+        <activity
+            android:name=".presentacion.ProfesionalActivity"
+            android:exported="false" />
+        <activity
             android:name=".ForumActivity"
             android:exported="false" />
         <activity
@@ -29,8 +35,8 @@
         </activity>
         <activity
             android:name=".presentacion.PrincipalActivity"
-            android:theme="@style/Theme.EnBuenasManos"
-            android:exported="false" />
+            android:exported="false"
+            android:theme="@style/Theme.EnBuenasManos" />
         <activity
             android:name=".presentacion.LoginActivity"
             android:exported="false" />
@@ -39,8 +45,8 @@
             android:exported="false" />
         <activity
             android:name=".PostDetailsActivity"
-            android:theme="@style/Theme.Consejo"
-            android:exported="false" />
+            android:exported="false"
+            android:theme="@style/Theme.Consejo" />
 
         <meta-data
             android:name="preloaded_fonts"

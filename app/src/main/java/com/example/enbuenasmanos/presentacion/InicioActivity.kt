@@ -10,19 +10,28 @@ import com.example.enbuenasmanos.databinding.ActivityInicioBinding
 
 class InicioActivity : AppCompatActivity() {
     private lateinit var binding: ActivityInicioBinding
+    private var cont:Int = 0
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityInicioBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        binding.btnIniciarSesion.setOnClickListener()
-        {
+        binding.btnIniciarSesion.setOnClickListener {
             var intent = Intent(this, LoginActivity::class.java)
             startActivity(intent)
         }
-        binding.btnRegistroCuidador.setOnClickListener()
-        {
-            var intent = Intent(this,RegistroUsuarioActivity::class.java)
+        binding.btnRegistroCuidador.setOnClickListener {
+            cont=0
+            var intent = Intent(this,RegistroUsuarioActivity::class.java).apply{
+                putExtra("cont",cont)
+            }
+            startActivity(intent)
+        }
+        binding.btnRegistroProfesional.setOnClickListener {
+            cont = 1
+            var intent = Intent(this, RegistroUsuarioActivity::class.java).apply {
+                putExtra("cont",cont)
+            }
             startActivity(intent)
         }
         binding.inicio.setOnClickListener() {

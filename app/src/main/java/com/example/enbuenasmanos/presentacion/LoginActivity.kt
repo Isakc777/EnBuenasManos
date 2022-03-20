@@ -7,21 +7,25 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
 import android.view.inputmethod.InputMethodManager
+import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
-import com.example.enbuenasmanos.MainActivity
-//import com.example.enbuenasmanos.ProviderType
 import com.example.enbuenasmanos.databinding.ActivityLoginBinding
 import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.firestore.FirebaseFirestore
+import kotlin.math.log
 
 class LoginActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityLoginBinding
+    private val db = FirebaseFirestore.getInstance()
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityLoginBinding.inflate(layoutInflater)
         setContentView(binding.root)
         validar()
         sesion()
+
+
 
         binding.login.setOnClickListener() {
             hiddenIME(binding.root)
@@ -41,12 +45,12 @@ class LoginActivity : AppCompatActivity() {
                 FirebaseAuth.getInstance().signInWithEmailAndPassword(binding.txtEmailAddress.text.toString(),
                     binding.txtPassword.text.toString()).addOnCompleteListener {
                     if (it.isSuccessful){
-                        showHome(it.result?.user?.email?:"", ProviderType.BASIC)
+                            showHome(it.result?.user?.email?:"", ProviderType.BASIC)
+
                     }else{
                         showAlert()
                     }
                 }
-
             }
         }
     }
@@ -75,7 +79,7 @@ class LoginActivity : AppCompatActivity() {
 
     private fun showHome(email:String,provider:ProviderType){
         val password:String = binding.txtPassword.text.toString()
-        var intent = Intent(this, PrincipalActivity::class.java).apply {
+        var intent = Intent(this, TipousuarioActivity::class.java).apply {
             putExtra("email",email)
             putExtra("provider",provider.name)
             putExtra("password",password)
