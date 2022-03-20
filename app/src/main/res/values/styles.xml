@@ -1,5 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <!--escriba shapeableImageViews para hacerlo circular-->
+    <style name="styleCircleImage">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSize">50%</item>
+    </style>
 
     <!--Tema para fondo transparente de diálogo.-->
     <style name="CustomDialog" parent="Theme.MaterialComponents.Dialog">

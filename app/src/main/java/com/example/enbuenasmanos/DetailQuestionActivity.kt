@@ -11,7 +11,11 @@ import com.example.enbuenasmanos.databinding.ActivityDetailQuestionBinding
 import com.example.enbuenasmanos.databinding.DialogCommentAddBinding
 import com.example.enbuenasmanos.databinding.RowQuestionsBinding
 import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.database.DataSnapshot
+import com.google.firebase.database.DatabaseError
 import com.google.firebase.database.FirebaseDatabase
+import com.google.firebase.database.ValueEventListener
+import com.google.firebase.firestore.FirebaseFirestore
 
 class DetailQuestionActivity : AppCompatActivity() {
 
@@ -22,9 +26,15 @@ class DetailQuestionActivity : AppCompatActivity() {
 
     private lateinit var progressDialog: ProgressDialog
 
+    private lateinit var commentArrayList: ArrayList<ModelComment>
+
+    private lateinit var adapterComment: AdapterComment
+
     //pregunta id, detalle
     private var questionId = ""
     private var question = ""
+
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityDetailQuestionBinding.inflate(layoutInflater)
@@ -39,10 +49,14 @@ class DetailQuestionActivity : AppCompatActivity() {
         firebaseAuth = FirebaseAuth.getInstance()
 
 
+
+
         //obtener la intencion que pasamos al adaptador
         val intent = intent
         questionId = intent.getStringExtra("questionId")!!
         question = intent.getStringExtra("question")!!
+
+
 
         //establecer la cateogira
 
@@ -57,6 +71,45 @@ class DetailQuestionActivity : AppCompatActivity() {
         binding.addCommentBtn.setOnClickListener{
             addCommentDialog()
         }
+
+        showComments()
+
+    }
+
+    private fun showComments() {
+       //iniciando arraylist
+        commentArrayList = ArrayList()
+
+        //path para cargar los comentarios de la base de datos
+
+        val ref = FirebaseDatabase.getInstance().getReference("Questions")
+        ref.child(questionId).child("Comments")
+            .addValueEventListener(object : ValueEventListener {
+                override fun onDataChange(snapshot: DataSnapshot) {
+                    //limpiar lista
+                    commentArrayList.clear()
+                    for (ds in snapshot.children){
+                        //obterner datos del modelo
+                        val model = ds.getValue(ModelComment::class.java)
+                        //agregar la lista
+                        commentArrayList.add(model!!)
+
+                    }
+
+                    //configuracion del adaptador
+                    adapterComment = AdapterComment(this@DetailQuestionActivity, commentArrayList)
+                    //establecer adaptador de recyclerview
+                    binding.commentsRv.adapter = adapterComment
+
+                }
+
+
+                override fun onCancelled(error: DatabaseError) {
+
+                }
+
+
+            })
 
     }
 
@@ -121,11 +174,6 @@ class DetailQuestionActivity : AppCompatActivity() {
                 progressDialog.dismiss()
                 Toast.makeText(this, "Fallo al agregarse la respuesta ${e.message}", Toast.LENGTH_SHORT).show()
             }
-
-
-
-
-
 
 
 
