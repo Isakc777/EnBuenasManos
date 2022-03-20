@@ -97,7 +97,7 @@ class AdapterQuestion :RecyclerView.Adapter<AdapterQuestion.HolderQuestion>, Fil
 
     //Clase ViewHolder para mantener/unidad de vistas de UI para row_questions.xml
     inner class HolderQuestion(itemView: View): RecyclerView.ViewHolder(itemView) {
-        //init ui vistas
+        //inicio ui vistas
         var questionTv: TextView = binding.questionTv
         var deleteBtn:ImageButton = binding.deleteBtn
     }
