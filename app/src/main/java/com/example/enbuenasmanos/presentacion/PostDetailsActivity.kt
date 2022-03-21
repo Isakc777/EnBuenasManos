@@ -1,16 +1,19 @@
-package com.example.enbuenasmanos
+package com.example.enbuenasmanos.presentacion
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import android.webkit.WebChromeClient
-import android.webkit.WebView
 import android.webkit.WebViewClient
 import android.widget.Toast
 import androidx.appcompat.app.ActionBar
 import com.android.volley.Request
 import com.android.volley.toolbox.StringRequest
 import com.android.volley.toolbox.Volley
+import com.example.enbuenasmanos.Constants
+import com.example.enbuenasmanos.Model.ModelLabel
+import com.example.enbuenasmanos.R
+import com.example.enbuenasmanos.controladores.adapters.AdapterLabel
 import kotlinx.android.synthetic.main.activity_post_details.*
 import org.json.JSONObject
 import java.text.SimpleDateFormat

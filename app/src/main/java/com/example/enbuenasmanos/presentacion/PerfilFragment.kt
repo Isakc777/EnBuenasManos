@@ -5,6 +5,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.example.enbuenasmanos.R
 import com.example.enbuenasmanos.databinding.FragmentPerfilBinding
@@ -70,6 +71,7 @@ class PerfilFragment : Fragment() {
                         "telf" to binding.txtTelf.text.toString(),
                         "tipo_user" to binding.txtTipoUs.text.toString())
                 )
+                Toast.makeText(activity, "Datos de Usuario editado", Toast.LENGTH_SHORT).show()
             }
         }
 

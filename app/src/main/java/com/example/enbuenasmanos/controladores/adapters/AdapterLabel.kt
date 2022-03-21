@@ -1,13 +1,13 @@
-package com.example.enbuenasmanos
+package com.example.enbuenasmanos.controladores.adapters
 
 import android.content.Context
-import android.view.ContextMenu
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
-import androidx.appcompat.view.menu.ActionMenuItemView
 import androidx.recyclerview.widget.RecyclerView
+import com.example.enbuenasmanos.Model.ModelLabel
+import com.example.enbuenasmanos.R
 
 class AdapterLabel(
     var context:Context,

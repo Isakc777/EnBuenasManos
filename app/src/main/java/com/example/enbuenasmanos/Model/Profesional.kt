@@ -1,4 +1,4 @@
-package com.example.enbuenasmanos
+package com.example.enbuenasmanos.Model
 
 data class Profesional(var contraseña:String ? = null,
                        var cargo:String ? = null,

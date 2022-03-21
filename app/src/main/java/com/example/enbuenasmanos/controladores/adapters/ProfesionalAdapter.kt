@@ -4,7 +4,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
-import com.example.enbuenasmanos.Profesional
+import com.example.enbuenasmanos.Model.Profesional
 import com.example.enbuenasmanos.R
 import com.example.enbuenasmanos.databinding.ListProfesionalItemBinding
 import com.squareup.picasso.Picasso

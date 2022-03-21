@@ -1,4 +1,4 @@
-package com.example.enbuenasmanos
+package com.example.enbuenasmanos.Model
 
 class ModelPost(
     val authorName: String,

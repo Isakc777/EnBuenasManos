@@ -22,13 +22,13 @@
             android:exported="false"
             android:theme="@style/Theme.EnBuenasManos" />
         <activity
-            android:name=".DetailQuestionActivity"
+            android:name=".presentacion.DetailQuestionActivity"
             android:exported="false" />
         <activity
-            android:name=".ForumActivity"
+            android:name=".presentacion.ForumActivity"
             android:exported="false" />
         <activity
-            android:name=".AddQuestionsActivity"
+            android:name=".presentacion.AddQuestionsActivity"
             android:exported="false" />
         <activity
             android:name=".presentacion.InicioActivity"
@@ -50,7 +50,7 @@
             android:name=".presentacion.RegistroUsuarioActivity"
             android:exported="false" />
         <activity
-            android:name=".PostDetailsActivity"
+            android:name=".presentacion.PostDetailsActivity"
             android:exported="false"
             android:theme="@style/Theme.Consejo" />
 
