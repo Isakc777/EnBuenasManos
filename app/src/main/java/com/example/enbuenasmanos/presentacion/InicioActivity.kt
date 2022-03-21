@@ -9,6 +9,8 @@ import android.view.inputmethod.InputMethodManager
 import com.example.enbuenasmanos.databinding.ActivityInicioBinding
 
 class InicioActivity : AppCompatActivity() {
+
+    //inicio de proyecto
     private lateinit var binding: ActivityInicioBinding
     private var cont:Int = 0
     override fun onCreate(savedInstanceState: Bundle?) {
