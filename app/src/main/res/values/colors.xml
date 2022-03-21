@@ -18,7 +18,7 @@
 
     <!-- Login -->
     <color name="LoginBackground">#282b3a</color>
-    <color name="LoginButton">#73D3BC</color>
+    <color name="LoginButton">#4CAF50</color>
     <color name="LoginText">#AAAAAA</color>
     <color name="LoginHighlight">#c5c5c5</color>
     <color name="LoginForgot">#AAAAAA</color>

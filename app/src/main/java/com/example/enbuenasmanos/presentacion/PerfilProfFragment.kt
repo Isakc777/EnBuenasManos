@@ -8,12 +8,12 @@ import android.view.ViewGroup
 import androidx.appcompat.app.AppCompatActivity
 import com.example.enbuenasmanos.R
 import com.example.enbuenasmanos.databinding.FragmentPerfilBinding
-import com.google.firebase.auth.FirebaseAuth
+import com.example.enbuenasmanos.databinding.FragmentPerfilProfBinding
 import com.google.firebase.firestore.FirebaseFirestore
 
+class PerfilProfFragment : Fragment() {
 
-class PerfilFragment : Fragment() {
-    private lateinit var binding: FragmentPerfilBinding
+    private lateinit var binding: FragmentPerfilProfBinding
     private val db = FirebaseFirestore.getInstance()
     private var cont:Int = 0
 
@@ -21,9 +21,8 @@ class PerfilFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        binding = FragmentPerfilBinding.inflate(inflater, container, false)
+        binding = FragmentPerfilProfBinding.inflate(inflater, container, false)
         return binding.root
-
     }
 
     override fun onStart() {

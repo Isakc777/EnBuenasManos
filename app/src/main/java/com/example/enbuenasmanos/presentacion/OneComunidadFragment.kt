@@ -11,7 +11,7 @@ import com.squareup.picasso.Picasso
 
 class OneComunidadFragment : Fragment() {
 
-    private lateinit var binding : FragmentOneComunidadBinding
+    /*private lateinit var binding : FragmentOneComunidadBinding
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -29,5 +29,5 @@ class OneComunidadFragment : Fragment() {
         }
 
         return binding.root
-    }
+    }*/
 }

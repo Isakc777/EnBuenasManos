@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/itComunidad_prof"
+        android:icon="@drawable/ic_forum_24"
+        android:title="Comunidad" />
+    <item
+        android:id="@+id/itConsejos_prof"
+        android:icon="@drawable/ic_book_24"
+        android:title="Consejos" />
+    <item
+        android:id="@+id/itPerfil_prof"
+        android:icon="@drawable/ic_account_circle_24"
+        android:title="Mi perfil" />
+</menu>
