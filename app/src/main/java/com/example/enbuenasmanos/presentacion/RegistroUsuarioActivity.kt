@@ -64,6 +64,9 @@ class RegistroUsuarioActivity : AppCompatActivity() {
                                         "contraseña" to binding.txtPassword.text.toString(),
                                         "nombre" to "",
                                         "tipo_user" to "profesional",
+                                        "cargo" to "",
+                                        "descripcion" to "",
+                                        "img" to "https://isabelpaz.com/wp-content/themes/nucleare-pro/images/no-image-box.png",
                                         "telf" to "")
                                 )
                             } else {
