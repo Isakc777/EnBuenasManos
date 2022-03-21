@@ -13,7 +13,13 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.SinTema"
         android:usesCleartextTraffic="true">
-        
+
+        <activity
+            android:name=".presentacion.TipousuarioActivity"
+            android:exported="false" />
+        <activity
+            android:name=".presentacion.ProfesionalActivity"
+            android:exported="false" />
         <activity
             android:name=".DetailQuestionActivity"
             android:exported="false" />
