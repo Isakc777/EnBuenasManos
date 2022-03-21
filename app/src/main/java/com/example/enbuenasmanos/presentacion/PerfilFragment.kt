@@ -37,7 +37,6 @@ class PerfilFragment : Fragment() {
         //recupera los datos del usuario
         db.collection("usuarios").document(email.toString()).get().addOnSuccessListener {
             binding.txtNombre.setText(it.get("nombre") as String?)
-            binding.txtprovider.setText(it.get("provider") as String?)
             binding.txtPass.setText(it.get("contraseña") as String?)
             binding.txtTelf.setText(it.get("telf") as String?)
             binding.txtTipoUs.setText(it.get("tipo_user") as String?)

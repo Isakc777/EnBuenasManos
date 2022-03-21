@@ -1,20 +1,24 @@
 package com.example.enbuenasmanos.presentacion
 
 import android.os.Bundle
+import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.view.isVisible
 import com.example.enbuenasmanos.R
 import com.example.enbuenasmanos.databinding.FragmentPerfilBinding
 import com.example.enbuenasmanos.databinding.FragmentPerfilProfBinding
 import com.google.firebase.firestore.FirebaseFirestore
+import com.squareup.picasso.Picasso
 
 class PerfilProfFragment : Fragment() {
 
     private lateinit var binding: FragmentPerfilProfBinding
     private val db = FirebaseFirestore.getInstance()
+    private val db2 = FirebaseFirestore.getInstance()
     private var cont:Int = 0
 
     override fun onCreateView(
@@ -36,13 +40,29 @@ class PerfilProfFragment : Fragment() {
         //recupera los datos del usuario
         db.collection("usuarios").document(email.toString()).get().addOnSuccessListener {
             binding.txtNombre.setText(it.get("nombre") as String?)
-            binding.txtprovider.setText(it.get("provider") as String?)
             binding.txtPass.setText(it.get("contraseña") as String?)
             binding.txtTelf.setText(it.get("telf") as String?)
-            binding.txtTipoUs.setText(it.get("tipo_user") as String?)
+
         }
+        db2.collection("profesional").document(email.toString()).get().addOnSuccessListener {
+            binding.txtCargo.setText(it.get("cargo") as String?)
+            binding.txtTipoUs.setText(it.get("img") as String?)
+            binding.txtDescProf.setText(it.get("descripcion") as String?)
+            var url:String = binding.txtTipoUs.text.toString()
+            Log.d("myTag",url)
+            Picasso.get().load(url).into(binding.imageViewProf)
+        }
+
+
         binding.txtNombre.isEnabled = false
         binding.txtTelf.isEnabled = false
+        binding.txtprovider.isEnabled = false
+        binding.txtPass.isEnabled = false
+        binding.txtemail.isEnabled = false
+        binding.txtTipoUs.isEnabled = false
+        binding.txtTipoUs.isVisible = false
+        binding.txtCargo.isEnabled = false
+        binding.txtDescProf.isEnabled = false
 
         setup(email?:"",provider?:"",password?:"")
 
@@ -56,9 +76,9 @@ class PerfilProfFragment : Fragment() {
     }
 
     private fun setup(email: String, provider:String, password:String){
-        binding.txtemail.text = email
-        binding.txtprovider.text = provider
-        binding.txtPass.text = password
+        binding.txtemail.setText(email)
+        binding.txtprovider.setText(provider)
+        binding.txtPass.setText(password)
         binding.btnEditar.setOnClickListener {
             cont += 1
             cambioIcon(cont)
@@ -68,7 +88,18 @@ class PerfilProfFragment : Fragment() {
                         "contraseña" to binding.txtPass.text.toString(),
                         "nombre" to binding.txtNombre.text.toString(),
                         "telf" to binding.txtTelf.text.toString(),
-                        "tipo_user" to binding.txtTipoUs.text.toString())
+                        "tipo_user" to "profesional")
+                )
+                db2.collection("profesional").document(email).set(
+                    hashMapOf("provider" to provider,
+                        "contraseña" to binding.txtPass.text.toString(),
+                        "nombre" to binding.txtNombre.text.toString(),
+                        "telf" to binding.txtTelf.text.toString(),
+                        "tipo_user" to "profesional",
+                        "cargo" to binding.txtCargo.text.toString(),
+                        "descripcion" to binding.txtDescProf.text.toString(),
+                        "img" to binding.txtTipoUs.text.toString()
+                    )
                 )
             }
         }
@@ -80,10 +111,18 @@ class PerfilProfFragment : Fragment() {
             binding.btnEditar.setImageResource(R.drawable.ic_save_24)
             binding.txtNombre.isEnabled = true
             binding.txtTelf.isEnabled = true
+            binding.txtCargo.isEnabled = true
+            binding.txtDescProf.isEnabled = true
         } else {
             binding.btnEditar.setImageResource(R.drawable.ic_edit_24)
             binding.txtNombre.isEnabled = false
             binding.txtTelf.isEnabled = false
+            binding.txtprovider.isEnabled = false
+            binding.txtPass.isEnabled = false
+            binding.txtemail.isEnabled = false
+            binding.txtTipoUs.isEnabled = false
+            binding.txtCargo.isEnabled = false
+            binding.txtDescProf.isEnabled = false
         }
     }
 }

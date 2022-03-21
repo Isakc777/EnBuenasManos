@@ -8,6 +8,10 @@ import com.example.enbuenasmanos.databinding.ActivityPrincipalBinding
 import com.example.enbuenasmanos.databinding.ActivityTipousuarioBinding
 import com.google.firebase.firestore.FirebaseFirestore
 
+enum class ProviderType{
+    BASIC,
+    GOOGLE
+}
 class TipousuarioActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityTipousuarioBinding
@@ -42,7 +46,7 @@ class TipousuarioActivity : AppCompatActivity() {
                 var intent = Intent(this, PrincipalActivity::class.java).apply {
                     putExtra("email",email)
                     putExtra("contraseña", password)
-                    putExtra("provider", ProviderType.BASIC)
+                    putExtra("provider", ProviderType.BASIC.name)
                 }
                 startActivity(intent)
             }
@@ -50,7 +54,7 @@ class TipousuarioActivity : AppCompatActivity() {
                 var intent = Intent(this, ProfesionalActivity::class.java).apply {
                     putExtra("email",email)
                     putExtra("contraseña", password)
-                    putExtra("provider", ProviderType.BASIC)
+                    putExtra("provider", ProviderType.BASIC.name)
                 }
                 startActivity(intent)
             }
