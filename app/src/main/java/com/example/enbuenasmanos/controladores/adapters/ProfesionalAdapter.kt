@@ -7,7 +7,6 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.enbuenasmanos.Profesional
 import com.example.enbuenasmanos.R
 import com.example.enbuenasmanos.databinding.ListProfesionalItemBinding
-import com.example.enbuenasmanos.entidades.Comunidad
 import com.squareup.picasso.Picasso
 
 class ProfesionalAdapter(private val profesionalItemsList: List<Profesional>) : RecyclerView.Adapter<ProfesionalAdapter.ProfesionalViewHolder>(){

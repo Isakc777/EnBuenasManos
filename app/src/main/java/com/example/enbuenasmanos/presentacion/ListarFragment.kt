@@ -7,11 +7,9 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
-import androidx.recyclerview.widget.RecyclerView
 import com.example.enbuenasmanos.Profesional
 import com.example.enbuenasmanos.controladores.adapters.ProfesionalAdapter
 import com.example.enbuenasmanos.databinding.FragmentListarBinding
-import com.example.enbuenasmanos.logica.ProfesionalBL
 import com.google.firebase.firestore.*
 
 class ListarFragment : Fragment(){
