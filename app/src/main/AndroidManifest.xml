@@ -19,7 +19,8 @@
             android:exported="false" />
         <activity
             android:name=".presentacion.ProfesionalActivity"
-            android:exported="false" />
+            android:exported="false"
+            android:theme="@style/Theme.EnBuenasManos" />
         <activity
             android:name=".DetailQuestionActivity"
             android:exported="false" />
