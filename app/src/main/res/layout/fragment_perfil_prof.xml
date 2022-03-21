@@ -39,7 +39,7 @@
         android:layout_width="359dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="5dp"
-        android:hint="Contraseña"
+        android:text="Contraseña"
         android:textSize="16sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -90,6 +90,7 @@
         android:layout_marginTop="5dp"
         android:fontFamily="@font/muli_black"
         android:text="Cargo"
+        android:hint="Ingrese su cargo..."
         android:textSize="16sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -134,18 +135,19 @@
 
     <EditText
         android:id="@+id/txtDescProf"
-        android:layout_width="273dp"
+        android:layout_width="360dp"
         android:layout_height="105dp"
         android:layout_marginTop="5dp"
         android:ems="10"
         android:gravity="start|top"
+        android:hint="Ingrese una descripción suya..."
         android:inputType="textMultiLine"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.188"
+        app:layout_constraintHorizontal_bias="0.509"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/txtCargo"
-        app:layout_constraintVertical_bias="0.719" />
+        app:layout_constraintVertical_bias="0.117" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
