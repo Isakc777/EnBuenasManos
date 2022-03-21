@@ -2,44 +2,45 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/Perfil"
+    android:id="@+id/PerfilProf"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".presentacion.PerfilFragment">
+    tools:context=".presentacion.PerfilProfFragment">
 
 
-    <TextView
+    <EditText
         android:id="@+id/txtprovider"
-        android:layout_width="359dp"
-        android:layout_height="40dp"
-        android:layout_marginTop="40dp"
+        android:layout_width="357dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
         android:fontFamily="@font/muli_black"
         android:text="Proveedor"
         android:textSize="16sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.576"
+        app:layout_constraintHorizontal_bias="0.481"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/txtemail" />
 
-    <TextView
+    <EditText
         android:id="@+id/txtemail"
         android:layout_width="357dp"
-        android:layout_height="40dp"
-        android:layout_marginTop="48dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
         android:fontFamily="@font/muli_black"
         android:text="Email"
         android:textSize="16sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.551"
+        app:layout_constraintHorizontal_bias="0.481"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/imageViewProf" />
 
-    <TextView
+    <EditText
         android:id="@+id/txtPass"
         android:layout_width="359dp"
-        android:layout_height="40dp"
-        android:layout_marginTop="40dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
         android:hint="Contraseña"
+        android:textSize="16sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/txtprovider"
@@ -48,9 +49,10 @@
     <EditText
         android:id="@+id/txtNombre"
         android:layout_width="359dp"
-        android:layout_height="40dp"
-        android:layout_marginTop="40dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
         android:hint="Ingrese nombre..."
+        android:textSize="16sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/txtPass"
@@ -59,26 +61,39 @@
     <EditText
         android:id="@+id/txtTelf"
         android:layout_width="359dp"
-        android:layout_height="40dp"
-        android:layout_marginTop="40dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
         android:hint="Ingrese Teléfono..."
+        android:textSize="16sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/txtNombre"
         tools:ignore="TouchTargetSizeCheck" />
 
 
-    <TextView
+    <EditText
         android:id="@+id/txtTipoUs"
-        android:layout_width="357dp"
-        android:layout_height="40dp"
-        android:layout_marginTop="40dp"
+        android:layout_width="359dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
         android:fontFamily="@font/muli_black"
         android:text="Tipo de Usuario"
         android:textSize="16sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/txtTelf" />
+
+    <EditText
+        android:id="@+id/txtCargo"
+        android:layout_width="359dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:fontFamily="@font/muli_black"
+        android:text="Cargo"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txtTipoUs" />
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/btnEditar"
@@ -89,11 +104,48 @@
         android:tint="#FFFFFF"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.938"
+        app:layout_constraintHorizontal_bias="0.926"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txtTipoUs"
-        app:layout_constraintVertical_bias="0.94"
+        app:layout_constraintTop_toBottomOf="@+id/txtCargo"
+        app:layout_constraintVertical_bias="0.864"
         tools:ignore="SpeakableTextPresentCheck" />
+
+    <ImageView
+        android:id="@+id/imageViewProf"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:layout_marginTop="10dp"
+        android:src="@drawable/logo"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView8"
+        tools:src="@tools:sample/avatars" />
+
+    <TextView
+        android:id="@+id/textView8"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:text="Información Personal"
+        android:textSize="24sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/txtDescProf"
+        android:layout_width="273dp"
+        android:layout_height="105dp"
+        android:layout_marginTop="5dp"
+        android:ems="10"
+        android:gravity="start|top"
+        android:inputType="textMultiLine"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.188"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txtCargo"
+        app:layout_constraintVertical_bias="0.719" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

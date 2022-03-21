@@ -69,7 +69,7 @@ class AdapterQuestion :RecyclerView.Adapter<AdapterQuestion.HolderQuestion>, Fil
             val intent = Intent(context, DetailQuestionActivity::class.java)
             intent.putExtra("questionId", id)
             intent.putExtra("question", question)
-            context.startActivity(intent)
+            context?.startActivity(intent)
         }
 
     }

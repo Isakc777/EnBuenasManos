@@ -11,10 +11,7 @@ import com.example.enbuenasmanos.databinding.ActivityPrincipalBinding
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.FirebaseFirestore
 
-enum class ProviderType{
-    BASIC,
-    GOOGLE
-}
+
 
 class PrincipalActivity : AppCompatActivity() {
     private val db = FirebaseFirestore.getInstance()
