@@ -1,4 +1,4 @@
-package com.example.enbuenasmanos;
+package com.example.enbuenasmanos.controladores.adapters;
 
 import android.content.Intent
 import android.view.LayoutInflater
@@ -9,6 +9,9 @@ import android.widget.ImageView
 import android.widget.TextView
 import androidx.fragment.app.FragmentActivity
 import androidx.recyclerview.widget.RecyclerView;
+import com.example.enbuenasmanos.Model.ModelPost
+import com.example.enbuenasmanos.presentacion.PostDetailsActivity
+import com.example.enbuenasmanos.R
 import com.squareup.picasso.Picasso
 import org.jsoup.Jsoup
 import java.text.SimpleDateFormat

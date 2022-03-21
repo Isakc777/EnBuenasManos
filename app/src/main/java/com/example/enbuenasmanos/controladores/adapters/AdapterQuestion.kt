@@ -1,4 +1,4 @@
-package com.example.enbuenasmanos
+package com.example.enbuenasmanos.controladores.adapters
 
 import android.app.AlertDialog
 import android.content.Context
@@ -9,6 +9,9 @@ import android.view.ViewGroup
 import android.widget.*
 import androidx.fragment.app.FragmentActivity
 import androidx.recyclerview.widget.RecyclerView
+import com.example.enbuenasmanos.presentacion.DetailQuestionActivity
+import com.example.enbuenasmanos.presentacion.FilterQuestion
+import com.example.enbuenasmanos.Model.ModelQuestion
 import com.example.enbuenasmanos.databinding.RowQuestionsBinding
 import com.google.firebase.database.FirebaseDatabase
 

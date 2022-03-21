@@ -1,21 +1,21 @@
-package com.example.enbuenasmanos
+package com.example.enbuenasmanos.presentacion
 
 import android.app.ProgressDialog
-import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
+import com.example.enbuenasmanos.Model.ModelComment
+import com.example.enbuenasmanos.R
+import com.example.enbuenasmanos.controladores.adapters.AdapterComment
 import com.example.enbuenasmanos.databinding.ActivityDetailQuestionBinding
 import com.example.enbuenasmanos.databinding.DialogCommentAddBinding
-import com.example.enbuenasmanos.databinding.RowQuestionsBinding
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.DataSnapshot
 import com.google.firebase.database.DatabaseError
 import com.google.firebase.database.FirebaseDatabase
 import com.google.firebase.database.ValueEventListener
-import com.google.firebase.firestore.FirebaseFirestore
 
 class DetailQuestionActivity : AppCompatActivity() {
 
@@ -120,7 +120,7 @@ class DetailQuestionActivity : AppCompatActivity() {
         //vicular vista para dialog_comment_add.xml
         val commentAddBinding = DialogCommentAddBinding.inflate(LayoutInflater.from(this))
         //configuracion de alerta de dialogo
-        val builder = AlertDialog.Builder(this,R.style.CustomDialog)
+        val builder = AlertDialog.Builder(this, R.style.CustomDialog)
         builder.setView(commentAddBinding.root)
         //crear y mostrar alerta de dialogo
         val alertDialog = builder.create()

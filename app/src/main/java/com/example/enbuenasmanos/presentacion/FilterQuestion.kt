@@ -1,6 +1,9 @@
-package com.example.enbuenasmanos
+package com.example.enbuenasmanos.presentacion
 
 import android.widget.Filter
+import com.example.enbuenasmanos.Model.ModelQuestion
+import com.example.enbuenasmanos.controladores.adapters.AdapterQuestion
+
 class FilterQuestion: Filter {
 
     // lista de arreglos en la que queremos buscar

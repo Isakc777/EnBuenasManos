@@ -1,4 +1,4 @@
-package com.example.enbuenasmanos
+package com.example.enbuenasmanos.presentacion
 
 import android.content.Intent
 import android.os.Bundle
@@ -8,6 +8,8 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import com.example.enbuenasmanos.Model.ModelQuestion
+import com.example.enbuenasmanos.controladores.adapters.AdapterQuestion
 import com.example.enbuenasmanos.databinding.ActivityForumBinding
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.DataSnapshot

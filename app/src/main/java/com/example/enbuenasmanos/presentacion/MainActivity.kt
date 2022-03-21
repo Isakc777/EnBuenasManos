@@ -1,4 +1,4 @@
-package com.example.enbuenasmanos
+package com.example.enbuenasmanos.presentacion
 
 import android.app.ProgressDialog
 import android.os.Bundle
@@ -13,6 +13,9 @@ import androidx.fragment.app.Fragment
 import com.android.volley.Request
 import com.android.volley.toolbox.StringRequest
 import com.android.volley.toolbox.Volley
+import com.example.enbuenasmanos.Constants
+import com.example.enbuenasmanos.Model.ModelPost
+import com.example.enbuenasmanos.controladores.adapters.AdapterPost
 import com.example.enbuenasmanos.databinding.ActivityMainBinding
 import kotlinx.android.synthetic.main.activity_main.*
 import org.json.JSONObject

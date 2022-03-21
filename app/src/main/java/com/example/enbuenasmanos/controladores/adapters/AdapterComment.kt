@@ -1,23 +1,17 @@
-package com.example.enbuenasmanos
+package com.example.enbuenasmanos.controladores.adapters
 
 import android.app.AlertDialog
 import android.content.Context
-import android.content.Intent
-import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.*
 import androidx.recyclerview.widget.RecyclerView
+import com.example.enbuenasmanos.Model.ModelComment
+import com.example.enbuenasmanos.MyDate
 import com.example.enbuenasmanos.databinding.RowCommentBinding
 import com.google.firebase.auth.FirebaseAuth
-import com.google.firebase.database.DataSnapshot
-import com.google.firebase.database.DatabaseError
 import com.google.firebase.database.FirebaseDatabase
-import com.google.firebase.database.ValueEventListener
-import com.google.firebase.firestore.FirebaseFirestore
-
-import org.w3c.dom.Text
 
 class AdapterComment: RecyclerView.Adapter<AdapterComment.HolderComment> {
 
@@ -101,7 +95,7 @@ class AdapterComment: RecyclerView.Adapter<AdapterComment.HolderComment> {
 
     }
 
-    private fun deleteCommentDialog(model: ModelComment, holder: AdapterComment.HolderComment) {
+    private fun deleteCommentDialog(model: ModelComment, holder: HolderComment) {
         //alerta
         val builder = AlertDialog.Builder(context)
         builder.setTitle("Borrar Respuesta")

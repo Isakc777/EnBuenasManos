@@ -4,10 +4,7 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.fragment.app.Fragment
-import com.example.enbuenasmanos.ForumActivity
-import com.example.enbuenasmanos.MainActivity
 import com.example.enbuenasmanos.R
-import com.example.enbuenasmanos.databinding.ActivityLoginBinding
 import com.example.enbuenasmanos.databinding.ActivityProfesionalBinding
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.FirebaseFirestore
