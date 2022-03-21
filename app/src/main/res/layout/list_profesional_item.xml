@@ -28,13 +28,13 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-                tools:text="Noticia" />
+                tools:text="Nombre" />
 
             <TextView
                 android:id="@+id/txtDescripcion"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="10dp"
+                android:layout_marginLeft="3dp"
                 android:layout_marginTop="12dp"
                 android:gravity="left"
                 android:textSize="12dp"
@@ -42,7 +42,7 @@
                 app:layout_constraintHorizontal_bias="5.0"
                 app:layout_constraintStart_toEndOf="@+id/imgNews1"
                 app:layout_constraintTop_toBottomOf="@+id/txtTitulo"
-                tools:text="Descripción" />
+                tools:text="Tipo de Usuario" />
 
             <ImageView
                 android:id="@+id/imgNews1"
@@ -55,6 +55,48 @@
                 app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintVertical_bias="1.0"
                 tools:srcCompat="@tools:sample/avatars" />
+
+            <TextView
+                android:id="@+id/txtCargoP"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="3dp"
+                android:layout_marginTop="3dp"
+                android:gravity="left"
+                android:textSize="12dp"
+                tools:text="Cargo"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.485"
+                app:layout_constraintStart_toEndOf="@+id/imgNews1"
+                app:layout_constraintTop_toBottomOf="@+id/txtDescripcion" />
+
+            <TextView
+                android:id="@+id/txtTelfP"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="3dp"
+                android:layout_marginTop="3dp"
+                android:gravity="left"
+                android:textSize="12dp"
+                tools:text="Telefono"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.485"
+                app:layout_constraintStart_toEndOf="@+id/imgNews1"
+                app:layout_constraintTop_toBottomOf="@+id/txtCargoP" />
+
+            <TextView
+                android:id="@+id/txtDescP"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="3dp"
+                android:layout_marginTop="3dp"
+                android:gravity="left"
+                android:textSize="12dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.485"
+                app:layout_constraintStart_toEndOf="@+id/imgNews1"
+                app:layout_constraintTop_toBottomOf="@+id/txtTelfP"
+                tools:text="Descripcion" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
     </androidx.cardview.widget.CardView>

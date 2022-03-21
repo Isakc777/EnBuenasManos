@@ -31,8 +31,11 @@ class ProfesionalAdapter(private val profesionalItemsList: List<Profesional>) : 
         val binding = ListProfesionalItemBinding.bind(profesionalView)
 
         fun render(item : Profesional) {
-            binding.txtTitulo.text = item.nombre
-            binding.txtDescripcion.text = item.tipo_user
+            binding.txtTitulo.text = "usuario: "+item.nombre
+            binding.txtDescripcion.text = "Tipo de usuario: "+item.tipo_user
+            binding.txtCargoP.text = "Cargo: "+item.cargo
+            binding.txtTelfP.text = "Teléfono: "+item.telf
+            binding.txtDescP.text = item.descripcion
             Picasso.get().load(item.img).into(binding.imgNews1)
         }
 
